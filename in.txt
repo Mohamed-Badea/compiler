@@ -1,0 +1,15 @@
+10  COPY    START   2000
+20  FIRST   CLEAR   X
+30          LDA     #0
+40          +LDB    #TOTAL
+50          BASE    TOTAL
+60  LOOP    ADD     TABLE,X
+70          TIX     COUNT
+990          JLT     LOOP
+90          STA     TOTAL
+100         RSUB
+110  COUNT  RESW    1
+120  TABLE  RESW    2000
+130  TOTAL  RESW    2
+140         PADD    A,X,T,S
+150         END     FIRST
